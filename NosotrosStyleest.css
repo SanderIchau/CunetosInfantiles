@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root{
+    --color1: #fff;
+    --color2: #262626;
+    --color3: rgb(52,73,94);
+    --color4: #3b5988;
+    --color5: #00aced;
+    --color6: #bb0000;
+    --color7: #cb2027;
+    --color8: #fdf497;
+    --color9: #fd5949;
+    --color10: #d6249f;
+    --color11: #285aeb;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins" , sans-serif;
+}
+body{
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background: var(--color3);
+}
+ul{
+    display: flex;
+}
+li{
+    list-style: none;
+    margin: 20px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    font-size: 36px;
+    text-align: center;
+    line-height: 80px;
+    line-height: 0 0 10px 1px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+a{
+    display: block;
+    width: 100%;
+    border-radius: 50%;
+    background: var(--color1);
+    color: var(--color2);
+    transition: 0.4s ease;
+}
+li::after{
+    position: absolute;
+    content: '';
+    width: 100px;
+    height: 30px;
+    border-radius: 15px;
+    top: calc(40px - 15px);
+    left: calc(40px - 50px);
+    font-size: 14px;
+    font-weight: 700;
+    background: var(--color2);
+    color: var(--color1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
+    transition: 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: -1;
+    transform: scale(0);
+}
+li:nth-child(1)::after{
+    content: 'Facebook';
+}
+li:nth-child(2)::after{
+    content: 'Twitter';
+}
+li:nth-child(3)::after{
+    content: 'Github';
+}
+li:nth-child(4)::after{
+    content: 'Instagram';
+}
+li:nth-child(5)::after{
+    content: 'Youtube';
+}
+li:hover::after{
+    top: -60px;
+    transform: scale(1);
+}
+li:before{
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    left: calc(40px - 5px);
+    top: calc(40px + 10px);
+    background: var(--color2);
+    transform: rotate(45deg) scale(0);
+    z-index: -1;
+    transition: 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+li:hover::before{
+    top:-35px;
+    transform: rotate(45deg) scale(1);
+}
+a:hover{
+    color:var(--color1);
+    background: var(--color2);
+}
